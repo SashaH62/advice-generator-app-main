@@ -1,4 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+
 /* Universal Styling */
+
+:root {
+  --background: hsl(218, 23%, 16%);
+  --secondary-blue: hsl(217, 19%, 24%);
+  --neon-green: hsl(150, 100%, 66%);
+  --light-cyan: hsl(193, 38%, 86%);
+}
 
 * {
   margin: 0;
@@ -6,12 +15,104 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: var(--background);
+  font-family: "Manrope", sans-serif;
+}
+
+main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Advice Container */
+
+.container {
+  max-width: 550px;
+  padding: 3rem;
+  margin: 0 20px;
+  background-color: var(--secondary-blue);
+  text-align: center;
+  border-radius: 15px;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 3rem 1.625rem;
+  }
+}
+
+.id-heading {
+  color: var(--neon-green);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1.625rem;
+}
+
+.advice-text {
+  color: var(--light-cyan);
+  font-size: 1.725rem;
+}
+
+.divider-img {
+  margin: 2rem 0 1rem;
+  width: 100%;
+  height: auto;
+}
+
+.generate-button {
+  display: flex;
+  position: absolute;
+  bottom: -29.5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--neon-green);
+  padding: 1.25rem;
+  border: none;
+  border-radius: 50%;
+  transition: 0.1s all ease-in-out;
+}
+
+.generate-button:hover {
+  cursor: pointer;
+  box-shadow: var(--neon-green) 0px 0px 29px 0px;
+}
+
+.generate-button:active {
+  transform: translate(-50%, 2px) scale(1.01);
+}
+
+.rotate {
+  animation: rotatefresh 1s;
+}
+
 /* Attribution Section */
 
 .attribution {
+  color: #fff;
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/* Animations */
+
+@keyframes rotatefresh {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    transition: all 0.3s;
+  }
 }
